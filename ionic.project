@@ -1,7 +1,9 @@
 {
   "name": "boilerplate",
-   "gulpStartupTasks": [
-    "default"
+  "gulpStartupTasks": [
+    "default",
+    "sass",
+    "watch"
   ],
   "documentRoot": "www",
   "createDocumentRoot": "www",
