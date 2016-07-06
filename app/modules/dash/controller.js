@@ -1,43 +1,59 @@
 class DashController {
-  constructor() {
-    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
-    var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
-    var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+  constructor($scope) {
 
-    var grammar = '#JSGF V1.0;'
-    var recognition = new SpeechRecognition();
-    var speechRecognitionList = new SpeechGrammarList();
-    speechRecognitionList.addFromString(grammar, 1);
-    recognition.grammars = speechRecognitionList;
-    recognition.lang = 'en-US';
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
+    let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+    let SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+    let SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-    var diagnostic = document.querySelector('.output');
+    let grammar = '#JSGF V1.0;'
 
-    function reply_click(clicked_id)
-    {
-    recognition.start();
+    this.recognition = new SpeechRecognition();
+
+    this.speechRecognitionList = new SpeechGrammarList();
+    this.speechRecognitionList.addFromString(grammar, 1);
+
+    this.recognition.grammars = this.speechRecognitionList;
+    this.recognition.lang = 'en-US';
+    this.recognition.interimResults = false;
+    this.recognition.maxAlternatives = 1;
+
+    this.diagnosticText = '';
+
+    this.recognition.onerror = function(event) {
+      console.log('error!');
+    };
+
+    this.reply_click = () => {
+      this.recognition.start();
       console.log('Ready to receive a command.');
-    }
+    };
 
-    recognition.onresult = function(event) {
-      var command = event.results[0][0].transcript;
+    this.recognition.onresult = (event) => {
+      let command = event.results[0][0].transcript;
+      console.log(command);
+
       if (command === 'book delivery') {
-        diagnostic.textContent = 'Your delivery will arrive between 7 and 8.';
-      }else {
-        diagnostic.textContent = 'What can I do for you?';
+        this.diagnosticText = 'Your delivery will arrive between 7 and 8.';
+      }
+      else {
+        this.diagnosticText = 'What can I do for you?';
       }
 
+      $scope.$apply();
     }
 
-    recognition.onspeechend = function() {
-      recognition.stop();
-        var utterance = new SpeechSynthesisUtterance(diagnostic.textContent);
-      // speak the utterance
+    this.recognition.onspeechend = () => {
+      this.recognition.stop();
+      let utterance = new SpeechSynthesisUtterance(this.diagnosticText);
       speechSynthesis.speak(utterance);
+      console.log(utterance);
     }
+
   }
 }
+
+angular.module('example',[]);
+angular.module('example').controller('DashController', DashController);
+
 
 export default DashController;
