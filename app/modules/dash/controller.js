@@ -34,8 +34,18 @@ class DashController {
 
       if (command === 'book delivery') {
         this.diagnosticText = 'Your delivery will arrive between 7 and 8.';
+      } else if (command === 'cancel delivery') {
+        this.diagnosticText = 'Delivery has been cancelled.';
+      } else if (command === 'make a list' || 'lets make a list' || 'lets shop' ) {
+        this.diagnosticText = 'What would you like to add to your list?';
+        this.myFunction = () => {
+          console.log("making list");
+          // let node = document.createElement("LI");
+          // let textnode = document.createTextNode("Water");
+          // node.appendChild(textnode);
+          // document.getElementById("myList").appendChild(node);
       }
-      else {
+      } else {
         this.diagnosticText = 'What can I do for you?';
       }
 
@@ -47,6 +57,7 @@ class DashController {
       let utterance = new SpeechSynthesisUtterance(this.diagnosticText);
       speechSynthesis.speak(utterance);
       console.log(utterance);
+      console.log("speak utterance");
     }
 
   }
