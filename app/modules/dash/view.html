@@ -1,6 +1,6 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <h2>Welcome to Ionic</h2>
+    <!-- <h2>Welcome to Ionic</h2>
     <p>
     This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
     </p>
@@ -12,26 +12,16 @@
     </p>
     <p>
       For help sending push notifications, join the <a href="https://apps.ionic.io/signup" target="_blank">Ionic Platform</a> and check out <a href="http://docs.ionic.io/docs/push-overview" target="_blank">Ionic Push</a>. We also have other services available.
-    </p>
+    </p> -->
 
 
     <div ng-app="example" ng-controller="DashController as dashCtrl">
       <h1>Speech Demo</h1>
       <button class="click-button" ng-click="dashCtrl.reply_click()">Command</button>
       <div>
-        <p class="output" ng-model="dashCtrl.diagnosticText"><em>...diagnostic messages</em></p>
+        <p ng-model="dashCtrl.diagnosticText"><em> {{ dashCtrl.diagnosticText }} </em></p>
       </div>
     </div>
-
-    <ul id="myList">
-  <li>Coffee</li>
-  <li>Tea</li>
-</ul>
-
-<p>Click the button to append an item to the end of the list.</p>
-
-<button ng-click="dashCtrl.myFunction()">Try it</button>
-
 
   </ion-content>
 </ion-view>

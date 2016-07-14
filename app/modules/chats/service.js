@@ -23,7 +23,7 @@ class ChatsService {
         face: 'img/perry.png'
       }, {
         id: 4,
-        name: 'Mike Harrington',
+        name: 'Turk Harrington',
         lastText: 'This is wicked good ice cream.',
         face: 'img/mike.png'
       }

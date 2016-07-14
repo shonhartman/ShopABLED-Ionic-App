@@ -1,5 +1,5 @@
 class ChatsController {
-  constructor(ChatsService) {
+  constructor(ChatsService, $scope) {
     this._ChatsService = ChatsService;
     this.chats = ChatsService.all();
   }
