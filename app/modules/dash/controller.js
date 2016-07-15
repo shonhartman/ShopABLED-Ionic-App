@@ -37,18 +37,19 @@ class DashController {
 
       if (command === 'book delivery') {
         this.diagnosticText = 'Your delivery will arrive between 7 and 8.';
-      } else if (command === 'cancel delivery') {
+      }else if (command === 'cancel delivery') {
         this.diagnosticText = 'Delivery has been cancelled.';
-      } else if (command === 'make a list' || 'lets make a list' || 'lets shop' ) {
-        this.diagnosticText = 'What would you like to add to your list?';
-        console.log("new recognition");
-        let newRecognition = new SpeechRecognition(item);
-        console.log("ok MF" + newRecognition);
-      } else {
+      }else {
         this.diagnosticText = 'What can I do for you?';
       }
 
       $scope.$apply();
+    }
+
+    for (command === 'make a list' || 'lets make a list' || 'lets shop' ) {
+      this.diagnosticText = 'What would you like to add to your list?';
+      //this is where I assume a function would be called to initiate a new SpeechRecognition()
+      //then it goes through the same steps as before? ...with the result populating to a list
     }
   }
 }
