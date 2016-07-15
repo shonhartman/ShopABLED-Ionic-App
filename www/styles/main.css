@@ -9791,3 +9791,7 @@ a.button {
 
 button {
   border-radius: 5px; }
+
+.done {
+  text-decoration: line-through;
+  color: #999; }

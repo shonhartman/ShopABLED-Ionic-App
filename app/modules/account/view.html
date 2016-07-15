@@ -1,9 +1,18 @@
 <ion-view view-title="Account">
   <ion-content>
-    <ion-list>
-      <ion-toggle  ng-model="accountCtrl.settings.enableFriends">
-        Disable Friends
-      </ion-toggle>
-    </ion-list>
+    <div ng-app="ToDo" ng-controller="AccountController as accountCtrl">
+      <form class="item item-input" ng-submit="addTodo()">
+        <span class="input-label">New Todo</span>
+        <input type="text" name="newtodo" ng-model="newTodo" required>
+        <button ng-disabled="frm.$invalid">Go</button>
+      </form>
+      <button ng-click="clearCompleted()">Clear Completed</button>
+      <ul>
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span ng-class="{'done':todo.done}">{{todo.title}}</span>
+        </li>
+      </ul>
+    </div>
   </ion-content>
 </ion-view>

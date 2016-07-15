@@ -46,11 +46,12 @@ class DashController {
       $scope.$apply();
     }
 
-    for (command === 'make a list' || 'lets make a list' || 'lets shop' ) {
-      this.diagnosticText = 'What would you like to add to your list?';
-      //this is where I assume a function would be called to initiate a new SpeechRecognition()
-      //then it goes through the same steps as before? ...with the result populating to a list
-    }
+    // forEach
+    //  (command === 'make a list' || 'lets make a list' || 'lets shop' ) {
+    //   this.diagnosticText = 'What would you like to add to your list?';
+    //   //this is where I assume a function would be called to initiate a new SpeechRecognition()
+    //   //then it goes through the same steps as before? ...with the result populating to a list
+    // }
   }
 }
 
