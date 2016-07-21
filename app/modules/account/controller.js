@@ -4,8 +4,8 @@ class AccountController {
       {'title': 'Build a todo app', 'done':false}
     ];
     $scope.addTodo = function(){
-      $scope.todos.push({'title':$scope.newTodo, 'done':false})
-      $scope.newTodo = ' '
+      $scope.todos.push({'title':$scope.newTodo, 'done':false});
+      $scope.newTodo = ' ';
     }
     $scope.clearCompleted = function(){
       $scope.todos = $scope.todos.filter(function(item) {
@@ -23,7 +23,11 @@ class AccountController {
       var commands = {
         'new item *val' : function(val) {
           $scope.newTodo = val;
-          $scope.addTodo();
+          var speech = $scope.newTodo;
+          $scope.addTodo = function(){
+            $scope.todos.push({'title':$scope.newTodo, 'done':false});
+            $scope.newTodo = speech;
+          }
           $scope.$apply();
          }
       }
