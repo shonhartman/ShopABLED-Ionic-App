@@ -1,36 +1,26 @@
 class AccountController {
   constructor($scope) {
     $scope.todos = [
-      {'title': 'Build a todo app', 'done':false}
+      {'title': 'Build a todo app', 'done':false, 'tester': 'I rub it and you do it'}
     ];
-    $scope.addTodo = function(){
-      $scope.todos.push({'title':$scope.newTodo, 'done':false});
-      $scope.newTodo = ' ';
-    }
+
     $scope.clearCompleted = function(){
       $scope.todos = $scope.todos.filter(function(item) {
         return !item.done
       })
     }
 
-    $scope.$watch('todos', function(newValue, oldValue){
-      if(newValue!=oldValue){
-        localStorage.setItem('todos',JSON.stringify(newValue))
-      }
-    },true)
-
   // Let's define a command.
+  // This one populates to text field but not the list
       var commands = {
         'new item *val' : function(val) {
           $scope.newTodo = val;
-          var speech = $scope.newTodo;
           $scope.addTodo = function(){
-            $scope.todos.push({'title':$scope.newTodo, 'done':false});
-            $scope.newTodo = speech;
           }
           $scope.$apply();
          }
       }
+
       // Add our commands to annyang
       annyang.addCommands(commands);
       //debug
