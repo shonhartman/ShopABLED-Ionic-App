@@ -1,22 +1,38 @@
-<ion-view view-title="Chats">
+<ion-view view-title="ShopAbled">
   <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chatsCtrl.chats" type="item-text-wrap" ui-sref="tab.chat-detail({chatId: chat.id})">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="chatsCtrl.remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
+    <div class="bar bar-header bar-energized">
+      <h1 class="title">ShopAbled</h1>
+      <!-- <button class="button">Edit</button> -->
+      <button class="button icon ion-navicon"></button>
 
-    <!-- <div ng-repeat="message in messages"
-          ng-class="{other: message.userId != myId}"
-          class="messages">
-    </div> -->
+    </div>
+    <!-- List -->
+
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Carrots</span>
+        <input type="text">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Celery</span>
+        <input type="password">
+      </label>
+    </div>
+
+    <!-- Add/Cancel Buttons -->
+    <div class="row">
+      <div class="col-xs-6" style="text-align: center; margin-top: 200px;">
+        <button class="button button-dark">
+          Cancel
+        </button>
+      </div>
+      <div class="col-xs-6" style="text-align: center; margin-top: 200px;">
+        <button class="button button-balanced">
+          Add
+        </button>
+      </div>
+    </div>
 
   </ion-content>
 </ion-view>
