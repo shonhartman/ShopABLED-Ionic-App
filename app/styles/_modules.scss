@@ -1,69 +1,34 @@
-.done {
-  text-decoration: line-through;
-  color:#999;
-}
-
-body {
-  background-color: #666;
-}
-
-.list-group {
-  font-family: 'Roboto Slab';
-}
-
-.btn {
-  background-color: #9CCA5D;
-  border-radius: 20px;
-  width: 80px;
-}
-
-#main {
-  border: 3px solid black;
-    background-color: #8A572F;
-
-}
-
-#d1{
-  height:auto;
-  min-height:100px;
-  max-height:100%;
-  margin-top:25%;
-  border-radius:10px;
-/*   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-   */
-}
-
-h1{
-  padding:10px 0;
-  text-align:center;
+.shopabled-navbar {
+  background-color: #8A572F;
   color: #fff;
+  // padding: 0;
+    & .title {
+      font-size: 2em;
+    }
+    & .ion-navicon {
+      background-color: #9CCA5D;
+      color: black;
+      position: absolute;
+    }
 }
 
-li {
-  margin: 20px;
-
-}
-#s1 {
-  float: right;
-  cursor:pointer;
-
+.shopabled-add {
+  background-color: #9CCA5D;
+  color: #fff;
+  padding: 0 40px 0 40px;
+  border-radius: 25px;
 }
 
-.form-control{
-  display:inline-block;
-  width:250px;
-  max-width:60%;
-  min-width:100px;
-  margin:10px 0;
+.button-cancel {
+  padding: 0 30px 0 30px;
+  border-radius: 25px;
 }
 
-span{
-  display:inline-block;
-  margin-left:30px;
-}
-
-#p1 {
-  margin-top: 5px;
-  color: red;
-  font-size: 15px;
+.shopabled-tabs {
+  background-color: #8A572F;
+  color: #fff !important;
+    &:Hover {
+      background-color: #9CCA5D !important;
+      color: black;
+    }
 }
