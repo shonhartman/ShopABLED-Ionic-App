@@ -1,61 +1,47 @@
 <ion-view view-title="ShopAbled">
   <ion-content>
 
-    <!-- Hard Code List with ng-init -->
+    <form name="frm" ng-submit="addTodo()">
+       <input type="text" name="newTodo" ng-model="newTodo" required />
+       <button ng-disabled="frm.$invalid">Go</button>
+     </form>
+    <button ng-click="clearCompleted()">Clear Completed</button>
+    <ul>
+      <li ng-repeat="todo in todos">
+        <input type="checkbox" ng-model="todo.done"/>
+        <span ng-class="{'done':todo.done}">{{todo.title}}</span>
+      </li>
+    </ul>
 
-    <!-- <label class="item item-input">
-      <span class="input-label"></span>
-      <input type="text" placeholder="new item">
-    </label>
-
-    <div ng-init="list=['Honey','Peanut Butter','Bread', 'Milk', 'Espresso', 'Tea', 'Chips', 'Beer']">
-      <ul class="list">
-        <li class="item" ng-repeat="x in list">
-          {{ x }}
-        </li>
-      </ul>
-    </div> -->
-
-
-    <!-- Modal header bar -->
-    <!-- <ion-header-bar class="bar-secondary">
-      <h1 class="title">New Task</h1>
-      <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
-    </ion-header-bar> -->
-
-
-    <!-- Modal content area -->
-      <form ng-submit="createTask(task)" name="createItemField">
+    <!-- Modal content area WORKING--------------------------------------------------------->
+      <!-- <form ng-submit="createTask(task)" name="serve">
         <div class="list">
           <label class="item item-input">
             <input type="text" placeholder="New Item" ng-model="task.title">
           </label>
         </div>
-        <!-- <div class="padding">
-          <button type="submit" class="button button-block button-positive">Create Task</button>
-        </div> -->
-      </form>
+      </form> -->
 
         <!-- our list and list items -->
-        <ion-list>
+        <!-- <ion-list>
           <ion-item ng-repeat="task in tasks">
             {{task.title}}
           </ion-item>
-        </ion-list>
+        </ion-list> -->
 
     <!-- Add/Cancel Buttons -->
-    <div class="row list-button-align">
-      <div class="col-xs-6" style="text-align: center; margin-top: 200px;">
-        <button class="button button-dark button-cancel">
-          Cancel
-        </button>
-      </div>
-      <form ng-submit="createTask(task)" class="col-xs-6" style="text-align: center; margin-top: 200px;" ng-click="newTask()">
-        <button ng-disabled="createItemField.$pristine" class="button shopabled-add" ng-click="newTask()">
-          Add
-        </button>
-      </form>
-    </div>
+      <!-- <div class="row list-button-align">
+        <div class="col-xs-6" style="text-align: center; margin-top: 200px;">
+          <button class="button button-dark button-cancel">
+            Cancel
+          </button>
+        </div>
+        <form ng-submit="createTask(task)" class="col-xs-6" style="text-align: center; margin-top: 200px;" ng-click="newTask()">
+          <button ng-disabled="serve.$invalid" class="button shopabled-add" ng-click="newTask()">
+            Add
+          </button>
+        </form>
+      </div> --------------------------------------------------------------------------------->
 
   </ion-content>
 </ion-view>
