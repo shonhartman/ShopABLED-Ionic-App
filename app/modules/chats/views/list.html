@@ -2,46 +2,33 @@
   <ion-content>
 
     <form name="frm" ng-submit="addTodo()">
-       <input type="text" name="newTodo" ng-model="newTodo" required />
-       <button ng-disabled="frm.$invalid">Go</button>
-     </form>
-    <button ng-click="clearCompleted()">Clear Completed</button>
-    <ul>
-      <li ng-repeat="todo in todos">
-        <input type="checkbox" ng-model="todo.done"/>
-        <span ng-class="{'done':todo.done}">{{todo.title}}</span>
-      </li>
-    </ul>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" name="newTodo" ng-model="newTodo" placeholder="New Item" required />
+        </label>
+      </div>
+    </form>
 
-    <!-- Modal content area WORKING--------------------------------------------------------->
-      <!-- <form ng-submit="createTask(task)" name="serve">
-        <div class="list">
-          <label class="item item-input">
-            <input type="text" placeholder="New Item" ng-model="task.title">
-          </label>
+    <div class="card">
+      <div class="item item-divider">
+        <div class="col-xs-6 button-center">
+          <button class="button button-medium button-dark button-cancel" ng-click="clearCompleted()">Clear</button>
         </div>
-      </form> -->
-
-        <!-- our list and list items -->
-        <!-- <ion-list>
-          <ion-item ng-repeat="task in tasks">
-            {{task.title}}
-          </ion-item>
-        </ion-list> -->
-
-    <!-- Add/Cancel Buttons -->
-      <!-- <div class="row list-button-align">
-        <div class="col-xs-6" style="text-align: center; margin-top: 200px;">
-          <button class="button button-dark button-cancel">
-            Cancel
-          </button>
+        <div class="col-xs-6 button-center">
+          <button class="button button-medium shopabled-add" ng-disabled="frm.$invalid" ng-click="addTodo()">Add</button>
         </div>
-        <form ng-submit="createTask(task)" class="col-xs-6" style="text-align: center; margin-top: 200px;" ng-click="newTask()">
-          <button ng-disabled="serve.$invalid" class="button shopabled-add" ng-click="newTask()">
-            Add
-          </button>
-        </form>
-      </div> --------------------------------------------------------------------------------->
+      </div>
+    </div>
+
+    <ion-scroll zooming="true" direction="y" style="width: 500px; height: 500px">
+      <ion-list>
+        <ion-item ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done"/>
+          <span ng-class="{'done':todo.done}">{{todo.title}}</span>
+        </ion-item>
+      </ion-list>
+    </ion-scroll>
 
   </ion-content>
 </ion-view>

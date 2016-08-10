@@ -9809,7 +9809,7 @@ button {
   border-radius: 25px; }
 
 .button-cancel {
-  padding: 0 30px 0 30px;
+  padding: 0 35px 0 35px;
   border-radius: 25px; }
 
 .shopabled-tabs {
@@ -9818,3 +9818,6 @@ button {
   .shopabled-tabs:Hover {
     background-color: #9CCA5D !important;
     color: black; }
+
+.button-center {
+  text-align: center; }
