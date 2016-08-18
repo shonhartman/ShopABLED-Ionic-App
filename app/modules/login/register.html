@@ -1,0 +1,27 @@
+<ion-view view-title="Login">
+  <ion-content>
+    <form ng-submit="loginCtrl.register()">
+      <input type="text" placeholder="email" ng-model="registerCtrl.newUser.email">
+      <input type="text" placeholder="password" ng-model="registerCtrl.newUser.password">
+      <input type="submit" value="submit">
+    </form>
+  </ion-content>
+</ion-view>
+
+
+
+<!-- <form id="header" ng-submit="registerCtrl.register()">
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+    <div class="control-group">
+      <div class="wy-control">
+        <input id="form-style" type="text" placeholder="email" ng-model="registerCtrl.newUser.email"/>
+      </div>
+      <div class="wy-control">
+        <input type="password" placeholder="password" ng-model="registerCtrl.newUser.password"/>
+      </div>
+    </div>
+    <input type="submit" class="btn" />
+  </form>
+  <a id="alternate-option" href="https://www.google.com/">Already have an account? Login Here.</a> -->

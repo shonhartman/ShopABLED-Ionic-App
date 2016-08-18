@@ -9821,3 +9821,6 @@ button {
 
 .button-center {
   text-align: center; }
+
+.hide-form {
+  display: none; }

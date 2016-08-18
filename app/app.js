@@ -6,6 +6,8 @@ import account from './modules/account';
 import chats from './modules/chats';
 import dash from './modules/dash';
 import tabs from './modules/tabs';
+import login from './modules/login';
+
 
 let App = angular.module('app', [
   'ionic',
@@ -13,11 +15,12 @@ let App = angular.module('app', [
   'tabs',
   'account',
   'chats',
-  'dash'
+  'dash',
+  'login'
 ]);
 
 function config($urlRouterProvider) {
-  $urlRouterProvider.otherwise("/tab/dash");
+  $urlRouterProvider.otherwise("/login");
 }
 
 App.config(config);
