@@ -1,30 +1,12 @@
-<!-- <ion-view view-title="Account">
-  <ion-content>
-    <div ng-app="ToDo" ng-controller="AccountController as accountCtrl">
-      <ul ng-repeat="todo in todos">
-        <li class="item item-input" >
-          <input type="text" name="newtodo" ng-model="newTodo" ng-change="onEditChange()">
-          {{todo.title}}
-        </li>
-      </ul>
-      <ul class="list" ng-repeat="newTodo in todos">
-        <li class="item">
-          {{newTodo}}
-        </li>
-      </ul>
-    </div>
-  </ion-content>
-</ion-view> -->
-
 <ion-view>
   <ionic-content>
-    <body ng-app="shopAbledApp" ng-controller="shopAbledListCtrl">
+    <br>
+    <br>
+    <br>
 
-    <h2>My Todo List</h2>
-
-    <form ng-submit="itemAdd()">
-      <input type="text" ng-model="itemInput" size="50" placeholder="Add New"/>
-      <input type="submit" value="Add New" />
+    <form>
+      <input type="text" ng-model="itemInput" ng-change="itemAdd()" size="50" placeholder="Add New"/>
+      <input type="submit" value="Add New" ng-click="itemAdd()"/>
     </form>
 
     <br />
@@ -36,6 +18,5 @@
 
     <p><button ng-click="remove()">REMOVE MARKED</button></p>
 
-    </body>
   </ionic-content>
 </ion-view>
