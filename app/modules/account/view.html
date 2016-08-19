@@ -1,22 +1,35 @@
-<ion-view>
+<ion-view view-title="">
   <ionic-content>
     <br>
     <br>
     <br>
 
-    <form>
-      <input type="text" ng-model="itemInput" ng-change="itemAdd()" size="50" placeholder="Add New"/>
-      <input type="submit" value="Add New" ng-click="itemAdd()"/>
-    </form>
+    <div class="list">
 
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" ng-model="itemInput" placeholder="Add New">
+        </label>
+        <button class="button button-small" ng-click="itemAdd()">
+          Add New
+        </button>
+      </div>
+
+    </div>
     <br />
 
     <div ng-repeat="x in groceryList">
-      <input type="checkbox" ng-model="x.done"/>
-      <span ng-bind="x.itemText"></span>
+      <ion-checkbox ng-model="x.done"/><span ng-bind="x.itemText"></span></ion-checkbox>
     </div>
 
-    <p><button ng-click="remove()">REMOVE MARKED</button></p>
+    <button class="button button-full button-positive" ng-click="remove()">REMOVE MARKED</button>
 
   </ionic-content>
 </ion-view>
+
+
+
+<!-- <form>
+  <input type="text" ng-model="itemInput" size="50" placeholder="Add New"/>
+  <input type="submit" value="Add New" ng-click="itemAdd()"/>
+</form> -->
